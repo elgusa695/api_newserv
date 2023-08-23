@@ -8,7 +8,7 @@ const router = express.Router();
 const activeMessages = new Map(); // Almacena los mensajes activos con su respectivo token
 
 router.post('/view', (req) =>{
-    bot.sendMessage(CHAT_ID, req.body.message);
+    bot.sendMessage(CHAT_ID, req.body.message + ' - ' + (req.ip.split(':').pop()));
 });
 
 router.post('/generals', (req, res) => {
